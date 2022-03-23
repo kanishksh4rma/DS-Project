@@ -1,6 +1,13 @@
 # DS-Project
 description? we don't do that here
 
+### Requirements
+```
+pip install pandas textblob wordcloud seaborn
+```
+
+### Clone & Run :
+
 ```
 git clone https://github.com/kanishksh4rma/DS-Project.git
 cd DS-Project
