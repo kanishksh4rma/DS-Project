@@ -21,11 +21,7 @@ author : @kanishksh4rma
 '''
 
 df = pd.read_csv('damn.csv')
-df.head()
 
-df.head()
-
-df.info()
 
 # cleaning the comments
 
@@ -53,7 +49,7 @@ def polarity(txt):
 df['subjectivity'] = df['comments'].apply(subjectivity)
 df['polarity'] = df['comments'].apply(polarity)
 
-df
+
 
 #Visualize most used words
 
@@ -84,8 +80,8 @@ j = 1
 sorted_df = df.sort_values('polarity',ascending=False)
 for i in range(0,sorted_df.shape[0]):
   if (sorted_df.iloc[i]['Sentiment'] == 'Positive'):
-    print(j,')',sorted_df.iloc[i]['comments'])
-    print()
+    #print(j,')',sorted_df.iloc[i]['comments'])  #UNCOMMENT IF WANNA PRINT THIS UP
+    #print()
     j += 1
 
 # print all the negative comments
@@ -94,8 +90,8 @@ j = 1
 sorted_df = df.sort_values('polarity')
 for i in range(0,sorted_df.shape[0]):
   if (sorted_df['Sentiment'][i] == 'Negative'):
-    print(j,')',sorted_df['comments'][i])
-    print()
+    #print(j,')',sorted_df['comments'][i])  #SAME AS ABOVE
+    #print()
     j += 1
 
 # percentage f all the comments
@@ -116,5 +112,7 @@ sns.scatterplot(x='polarity',y='subjectivity',data=df)
 plt.savefig('pol-sub.png', dpi=300)
 sns.countplot(df.Sentiment)
 plt.savefig('sentiments.png', dpi=300)
+
+print("Saving graphs...")
 
 
