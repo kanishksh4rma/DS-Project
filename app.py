@@ -12,8 +12,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import pandas as pd
   
-# create an Empty DataFrame object
-df = pd.DataFrame()
+)
 
 '''
 
@@ -115,6 +114,8 @@ print('Negative comments : ',neg_tweets,'%')
 """## Data Visualization"""
 
 sns.scatterplot(x='polarity',y='subjectivity',data=df)
-
+plt.savefig('pol-sub.png', dpi=300)
 sns.countplot(df.Sentiment)
+plt.savefig('sentiments.png', dpi=300)
+
 
